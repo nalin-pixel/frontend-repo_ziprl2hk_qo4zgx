@@ -2,6 +2,7 @@ import React from 'react'
 import Hero from './components/Hero'
 import Sidebar from './components/Sidebar'
 import MainContent from './components/MainContent'
+import TopMap from './components/TopMap'
 
 const teal = '#0E7964'
 
@@ -11,6 +12,7 @@ export default function App() {
     address: '123 Market St, San Francisco, CA 94103',
     phone: '(415) 555-0123',
     website: '#',
+    center: [37.7749, -122.4194],
   }
 
   return (
@@ -22,7 +24,9 @@ export default function App() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
         <div className="grid lg:grid-cols-3 gap-8">
           {/* Left 2/3 */}
-          <div className="lg:col-span-2 min-w-0">
+          <div className="lg:col-span-2 min-w-0 space-y-6">
+            {/* Map just under the hero card and above About */}
+            <TopMap center={clinic.center} name={clinic.name} address={clinic.address} />
             <MainContent />
           </div>
 
