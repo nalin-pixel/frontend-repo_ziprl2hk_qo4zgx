@@ -1,6 +1,6 @@
 import React from 'react'
 import Spline from '@splinetool/react-spline'
-import { Star, MapPin, Phone, BadgeCheck, Home } from 'lucide-react'
+import { Star, MapPin, Phone, BadgeCheck, Home, ChevronRight } from 'lucide-react'
 
 const teal = '#0E7964'
 
@@ -40,11 +40,11 @@ export default function Hero({ name, address, phone, status = 'Open Now' }) {
         {/* One-line breadcrumbs at the very top with compact separators */}
         <nav className="text-[12px] sm:text-xs text-white/85 mb-2 truncate">
           <span className="inline-flex items-center gap-1 cursor-pointer hover:text-white/95 align-middle"><Home size={14} /> Home</span>
-          <span className="mx-1">·</span>
+          <ChevronRight size={14} className="inline mx-1 text-white/70 align-middle" />
           <span className="cursor-pointer hover:text-white/95">California</span>
-          <span className="mx-1">·</span>
+          <ChevronRight size={14} className="inline mx-1 text-white/70 align-middle" />
           <span className="cursor-pointer hover:text-white/95">San Francisco</span>
-          <span className="mx-1">·</span>
+          <ChevronRight size={14} className="inline mx-1 text-white/70 align-middle" />
           <span className="text-white font-medium truncate align-middle">{name}</span>
         </nav>
 

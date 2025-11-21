@@ -70,7 +70,8 @@ export default function Sidebar({ phone="(415) 555-0123", website="#", mapSrc })
             referrerPolicy="no-referrer-when-downgrade"
           />
         </div>
-        <div className="p-4">
+        {/* Hide the Get Directions button on mobile to avoid duplication with sticky bar */}
+        <div className="hidden lg:block p-4">
           <a
             href="https://maps.google.com/?q=Urgent+Care+San+Francisco"
             target="_blank"
