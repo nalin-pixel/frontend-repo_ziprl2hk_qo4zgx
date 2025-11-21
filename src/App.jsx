@@ -40,9 +40,13 @@ export default function App() {
       {/* Mobile Sticky Bottom Bar */}
       <div className="fixed bottom-0 inset-x-0 lg:hidden z-50">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-safe">
-          <div className="rounded-t-2xl p-3 grid grid-cols-2 gap-3 shadow-[0_-10px_30px_rgba(0,0,0,0.12)] ring-1 ring-gray-200 bg-white/98 backdrop-blur supports-[backdrop-filter]:bg-white/85">
-            <a href={`tel:${clinic.phone}`} className="inline-flex items-center justify-center rounded-xl px-4 py-3 font-medium text-gray-900 border border-gray-200 bg-white">Call Now</a>
-            <a href="https://maps.google.com/?q=Urgent+Care+San+Francisco" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center rounded-xl px-4 py-3 font-medium text-white" style={{ background: `linear-gradient(135deg, ${teal}, #11a386)` }}>Get Directions</a>
+          <div className="rounded-t-3xl p-3 grid grid-cols-2 gap-3 shadow-[0_-18px_40px_rgba(0,0,0,0.18)] ring-1 ring-gray-300 ring-offset-0 bg-white/90 backdrop-blur-md supports-[backdrop-filter]:bg-white/70 bg-gradient-to-t from-teal-50/60 to-white/70">
+            <a href={`tel:${clinic.phone}`} className="inline-flex items-center justify-center rounded-xl px-4 py-3 font-medium text-gray-900 border border-gray-200 bg-white/95 shadow-sm">
+              Call Now
+            </a>
+            <a href="https://maps.google.com/?q=Urgent+Care+San+Francisco" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center rounded-xl px-4 py-3 font-medium text-white shadow-sm" style={{ background: `linear-gradient(135deg, ${teal}, #11a386)` }}>
+              Get Directions
+            </a>
           </div>
         </div>
       </div>
