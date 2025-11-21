@@ -1,73 +1,47 @@
-function App() {
+import React from 'react'
+import Hero from './components/Hero'
+import Sidebar from './components/Sidebar'
+import MainContent from './components/MainContent'
+
+const teal = '#0E7964'
+
+export default function App() {
+  const clinic = {
+    name: 'UrgentCare Now - San Francisco',
+    address: '123 Market St, San Francisco, CA 94103',
+    phone: '(415) 555-0123',
+    website: '#',
+  }
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
-      {/* Subtle pattern overlay */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.05),transparent_50%)]"></div>
+    <div className="min-h-screen bg-white">
+      {/* Hero */}
+      <Hero name={clinic.name} address={clinic.address} phone={clinic.phone} status="Open Now" />
 
-      <div className="relative min-h-screen flex items-center justify-center p-8">
-        <div className="max-w-2xl w-full">
-          {/* Header with Flames icon */}
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center justify-center mb-6">
-              <img
-                src="/flame-icon.svg"
-                alt="Flames"
-                className="w-24 h-24 drop-shadow-[0_0_25px_rgba(59,130,246,0.5)]"
-              />
-            </div>
-
-            <h1 className="text-5xl font-bold text-white mb-4 tracking-tight">
-              Flames Blue
-            </h1>
-
-            <p className="text-xl text-blue-200 mb-6">
-              Build applications through conversation
-            </p>
+      {/* Content Layout */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
+        <div className="grid lg:grid-cols-3 gap-8">
+          {/* Left 2/3 */}
+          <div className="lg:col-span-2">
+            <MainContent />
           </div>
 
-          {/* Instructions */}
-          <div className="bg-slate-800/50 backdrop-blur-sm border border-blue-500/20 rounded-2xl p-8 shadow-xl mb-6">
-            <div className="flex items-start gap-4 mb-6">
-              <div className="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-lg flex items-center justify-center font-bold">
-                1
-              </div>
-              <div>
-                <h3 className="font-semibold text-white mb-1">Describe your idea</h3>
-                <p className="text-blue-200/80 text-sm">Use the chat panel on the left to tell the AI what you want to build</p>
-              </div>
-            </div>
-
-            <div className="flex items-start gap-4 mb-6">
-              <div className="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-lg flex items-center justify-center font-bold">
-                2
-              </div>
-              <div>
-                <h3 className="font-semibold text-white mb-1">Watch it build</h3>
-                <p className="text-blue-200/80 text-sm">Your app will appear in this preview as the AI generates the code</p>
-              </div>
-            </div>
-
-            <div className="flex items-start gap-4">
-              <div className="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-lg flex items-center justify-center font-bold">
-                3
-              </div>
-              <div>
-                <h3 className="font-semibold text-white mb-1">Refine and iterate</h3>
-                <p className="text-blue-200/80 text-sm">Continue the conversation to add features and make changes</p>
-              </div>
-            </div>
+          {/* Right 1/3 sticky */}
+          <div>
+            <Sidebar phone={clinic.phone} website={clinic.website} />
           </div>
+        </div>
+      </div>
 
-          {/* Footer */}
-          <div className="text-center">
-            <p className="text-sm text-blue-300/60">
-              No coding required • Just describe what you want
-            </p>
+      {/* Mobile Sticky Bottom Bar */}
+      <div className="fixed bottom-0 inset-x-0 lg:hidden z-50">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-safe">
+          <div className="bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/70 border-t border-gray-200 rounded-t-2xl shadow-2xl p-3 grid grid-cols-2 gap-3">
+            <a href={`tel:${clinic.phone}`} className="inline-flex items-center justify-center rounded-xl px-4 py-3 font-medium text-gray-900 border border-gray-200">Call Now</a>
+            <a href="https://maps.google.com/?q=Urgent+Care+San+Francisco" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center rounded-xl px-4 py-3 font-medium text-white" style={{ background: `linear-gradient(135deg, ${teal}, #11a386)` }}>Get Directions</a>
           </div>
         </div>
       </div>
     </div>
   )
 }
-
-export default App
