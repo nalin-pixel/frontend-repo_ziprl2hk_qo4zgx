@@ -89,8 +89,8 @@ export default function Sidebar({ phone="(415) 555-0123", website="#", mapSrc })
       {/* Hours */}
       <HoursAccordion />
 
-      {/* Quick Actions */}
-      <div className="bg-white rounded-xl border border-gray-100 shadow-sm p-4 space-y-3">
+      {/* Quick Actions - removed on mobile to avoid duplication with sticky bar */}
+      <div className="hidden sm:block bg-white rounded-xl border border-gray-100 shadow-sm p-4 space-y-3">
         <a href={`tel:${phone}`} className="inline-flex w-full items-center justify-center gap-2 rounded-lg px-4 py-2.5 text-gray-900 font-medium border border-gray-200 hover:bg-gray-50">
           <Phone size={18} /> Call Now
         </a>
