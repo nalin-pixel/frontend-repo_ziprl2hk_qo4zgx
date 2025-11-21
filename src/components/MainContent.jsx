@@ -17,7 +17,7 @@ function ServicesGrid() {
   return (
     <div className="grid sm:grid-cols-2 gap-3">
       {services.map((s, i) => (
-        <div key={i} className="flex items-start gap-3">
+        <div key={i} className="flex items-start gap-3 min-w-0">
           <CheckCircle className="text-emerald-500" size={20} />
           <span className="text-gray-800">{s}</span>
         </div>
@@ -59,11 +59,13 @@ function Gallery() {
     'https://images.unsplash.com/photo-1571772805064-2074845b320d?q=80&w=1200&auto=format&fit=crop'
   ]
   return (
-    <div className="overflow-x-auto">
-      <div className="flex gap-4 min-w-max pr-2">
-        {imgs.map((src, i) => (
-          <img key={i} src={src} alt="Clinic" className="h-40 sm:h-48 w-auto rounded-xl object-cover" />
-        ))}
+    <div className="-mx-6 sm:mx-0">
+      <div className="overflow-x-auto px-1 sm:px-0">
+        <div className="flex gap-4 min-w-max pr-2 snap-x snap-mandatory">
+          {imgs.map((src, i) => (
+            <img key={i} src={src} alt="Clinic" className="h-36 sm:h-48 w-64 sm:w-auto max-w-none rounded-xl object-cover snap-start shrink-0" />
+          ))}
+        </div>
       </div>
     </div>
   )
@@ -139,15 +141,17 @@ function Nearby() {
     {name:'CareNow Sunset', dist:'2.4 mi'},
   ]
   return (
-    <div className="overflow-x-auto">
-      <div className="flex gap-4 min-w-max">
-        {places.map((p, i)=> (
-          <div key={i} className="min-w-[220px] bg-white rounded-2xl border border-gray-100 shadow-sm p-4">
-            <div className="h-28 rounded-lg bg-gray-100 mb-3" />
-            <div className="font-medium text-gray-900">{p.name}</div>
-            <div className="text-sm text-gray-600">{p.dist} away</div>
-          </div>
-        ))}
+    <div className="-mx-6 sm:mx-0">
+      <div className="overflow-x-auto px-1 sm:px-0">
+        <div className="flex gap-4 min-w-max snap-x snap-mandatory pr-2">
+          {places.map((p, i)=> (
+            <div key={i} className="min-w-[220px] bg-white rounded-2xl border border-gray-100 shadow-sm p-4 snap-start shrink-0">
+              <div className="h-28 rounded-lg bg-gray-100 mb-3" />
+              <div className="font-medium text-gray-900">{p.name}</div>
+              <div className="text-sm text-gray-600">{p.dist} away</div>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   )
@@ -155,7 +159,7 @@ function Nearby() {
 
 export default function MainContent() {
   return (
-    <div className="space-y-8">
+    <div className="space-y-8 min-w-0">
       {/* About */}
       <Section title="About">
         <p className="text-gray-700 leading-relaxed">UrgentCare Now provides convenient, same-day care for non-life-threatening illnesses and injuries. Our board-certified providers offer a full range of services with on-site diagnostics to get you treated quickly and safely.</p>

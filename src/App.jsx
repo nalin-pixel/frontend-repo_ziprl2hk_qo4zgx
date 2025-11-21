@@ -22,12 +22,12 @@ export default function App() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
         <div className="grid lg:grid-cols-3 gap-8">
           {/* Left 2/3 */}
-          <div className="lg:col-span-2">
+          <div className="lg:col-span-2 min-w-0">
             <MainContent />
           </div>
 
           {/* Right 1/3 sticky */}
-          <div>
+          <div className="min-w-0">
             <Sidebar phone={clinic.phone} website={clinic.website} />
           </div>
         </div>
